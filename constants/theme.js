@@ -4,9 +4,12 @@ const {width,height}  =Dimensions.get("window")
 export const COLORS={
     primary:"#fc603f",
     secondary:"#cdcd02",
+    danger:"#dc3545",
 
     black:"#000000",
     white:"#ffffff",
+    purple:"#7a44cf",
+    
 
 
     ligthGray:"#f5f5f6",

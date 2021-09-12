@@ -24,7 +24,7 @@ export default function App() {
         screenOptions={{
           headerShown:false
         }}
-        initialRouteName={'Tabs'}
+        initialRouteName={'Tab'}
       >
         <Stack.Screen name="Tab" component={Tabs} />
         <Stack.Screen name="About" component={About} />
