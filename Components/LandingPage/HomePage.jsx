@@ -1,12 +1,20 @@
 import React from 'react';
-import {View,Text} from 'react-native'
+import {View,Text,SafeAreaView,TouchableOpacity,Image,StyleSheet,FlatList} from 'react-native'
+import { COLORS, icons,FONTS,SIZES } from "../../constants";
+import Users from '../../UsersDetails'
+
+
 
 const Home = () => {
-    return ( <View>
-        <Text>
-            Home
-        </Text>
-    </View> );
+    return ( <>
+        <View>
+            {
+                Users.users.map((user)=>(
+                    <Text key={user.id} >{user.name}</Text>
+                ))
+            }
+        </View>
+    </> );
 }
  
 export default Home;
