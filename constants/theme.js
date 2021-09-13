@@ -5,6 +5,7 @@ export const COLORS={
     primary:"#fc603f",
     secondary:"#cdcd02",
     danger:"#dc3545",
+    backdrop:"#C6FFDD",
 
     black:"#000000",
     white:"#ffffff",

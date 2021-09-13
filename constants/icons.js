@@ -5,7 +5,8 @@ export const Home=require('../assets/icons/Home.png')
 export const male=require("../assets/icons/male.png")
 export const female=require('../assets/icons/female.png')
 export const back=require('../assets/icons/back.png')
+export const me=require('../assets/icons/me.jpg')
 
 export default {
-    adduser,contactme,aboutme,Home,male,female,back
+    adduser,contactme,aboutme,Home,male,female,back,me
 }

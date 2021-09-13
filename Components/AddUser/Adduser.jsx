@@ -6,6 +6,7 @@ import {
   TextInput,
   Button,
   ScrollView,
+  SafeAreaView,
   Alert
 } from "react-native";
 import SwitchSelector from "react-native-switch-selector";
@@ -75,6 +76,7 @@ const Adduser = (props) => {
   });
 
   return (
+    <SafeAreaView>
     <Formik
       initialValues={{ name: "", surname: "", age: "", location: "" }}
       validateOnMount={true}
@@ -207,6 +209,7 @@ const Adduser = (props) => {
         </ScrollView>
       )}
     </Formik>
+    </SafeAreaView>
   );
 };
 

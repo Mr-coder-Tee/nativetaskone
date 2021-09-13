@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, TouchableOpacity } from "react-native";
+import { View, Image, TouchableOpacity,SafeAreaView } from "react-native";
 import {
   createBottomTabNavigator,
   BottomTabBar,
@@ -77,6 +77,7 @@ const Tabs = () => {
 console.log('users--->',users.length)
 
   return (
+    
     <Tab.Navigator
     style={{paddingTop:20}}
     
@@ -90,6 +91,7 @@ console.log('users--->',users.length)
         null
         
       ],
+      // headerShown:false
       
     }}
       // tabBarOptions={{
