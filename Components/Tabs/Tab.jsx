@@ -8,6 +8,7 @@ import Svg, { Path } from "react-native-svg";
 import { Home, About, Adduser, Contact } from "../index";
 import { COLORS, icons } from "../../constants";
 const Tab = createBottomTabNavigator();
+import {users} from '../../UsersDetails'
 /*
 screenOptions={{
   "tabBarShowLabel": false,
@@ -19,8 +20,10 @@ screenOptions={{
   ]
 }}
 */
+const Num=users.length
 const TabBarcustomButton = ({ children, onPress, accessibilityState }) => {
   var isSelected = accessibilityState.selected;
+  
 
   if (isSelected) {
     return (
@@ -72,15 +75,19 @@ const TabBarcustomButton = ({ children, onPress, accessibilityState }) => {
 const Tabs = () => {
   return (
     <Tab.Navigator
-   
+    style={{paddingTop:20}}
+    
     screenOptions={{
+      'scrollEnabled': true,
       "tabBarShowLabel": false,
       "tabBarStyle": [
         {
           "display": "flex"
         },
         null
-      ]
+        
+      ],
+      
     }}
       // tabBarOptions={{
       //   showLabel: false,
@@ -106,6 +113,7 @@ const Tabs = () => {
               }}
             />
           ),
+           tabBarBadge:Num
           // tabBarButton: (props) => <TabBarcustomButton {...props} />,
         }}
       />

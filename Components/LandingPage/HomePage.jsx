@@ -11,14 +11,16 @@ import {
   Animated,
 } from "react-native";
 import { COLORS, icons, FONTS, SIZES, Item } from "../../constants";
-import Users from "../../UsersDetails";
+import {users} from "../../UsersDetails";
 import Swipeable from "react-native-gesture-handler/Swipeable";
 import { version } from "react";
 const SCREEN = Dimensions.get("window").width;
 
-const Home = () => {
-  const { users } = Users;
 
+
+
+const Home = () => {
+ 
   
   const ItemBox = ({ data,handleDelete }) => {
       const rightSwipe = () => {

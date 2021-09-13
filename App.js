@@ -27,9 +27,9 @@ export default function App() {
         initialRouteName={'Tab'}
       >
         <Stack.Screen name="Tab" component={Tabs} />
-        <Stack.Screen name="About" component={About} />
+        {/* <Stack.Screen name="About" component={About} />
         <Stack.Screen name="Adduser" component={Adduser}/>
-        <Stack.Screen name="Contact" component={Contact}/>
+        <Stack.Screen name="Contact" component={Contact}/> */}
       </Stack.Navigator>
     </NavigationContainer>
  
