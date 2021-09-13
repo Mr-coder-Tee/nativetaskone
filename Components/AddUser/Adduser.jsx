@@ -20,7 +20,9 @@ const genderOption = [
   { label: "Female", value: "Female", imageIcon: icons.female },
 ];
 
-const Adduser = () => {
+const Adduser = (props) => {
+  console.log(props.users)
+
   const [genders, SetGender] = useState();
   const [name, setName] = useState();
   const [surname, setSurname] = useState();
@@ -47,9 +49,18 @@ const Adduser = () => {
   //     getGender()
   // },[gender])
   const AddUser=(name,surname,age,gender,location)=>{
-    users([...users,{
-      id:Users.users.length+1,name:name,surname:surname,age:age,gender:gender,location:location
-  }])
+    props.users.push({
+      id:users.length+1,
+      name:name,
+      surname:surname,
+      age:age,
+      location:location,
+      gender:gender,
+    })
+    
+  console.log('-->',props.users)
+  console.log('-->',users)
+
 
   // Alert.alert("New User Alert",name+" was added to the user list")
 }
@@ -155,7 +166,7 @@ const Adduser = () => {
                 placeholder="Location"
                 multiline
                 numberOfLines={4}
-                style={{ padding: 10, margin: 10, borderColor: COLORS.black }}
+                style={{ padding: 10, margin: 10, borderColor: COLORS.black,borderWidth: 1, }}
                 // inlineImageLeft='search_icon'
                 onChangeText={handleChange("location")}
                 onBlur={handleBlur("location")}
@@ -174,7 +185,6 @@ const Adduser = () => {
               )}
             </View>
             <SwitchSelector
-              style={styles.margin}
               options={genderOption}
               initial={0}
               selectedColor={COLORS.white}

@@ -11,69 +11,71 @@ import {
   Animated,
 } from "react-native";
 import { COLORS, icons, FONTS, SIZES, Item } from "../../constants";
-import {users} from "../../UsersDetails";
+import { users } from "../../UsersDetails";
 import Swipeable from "react-native-gesture-handler/Swipeable";
 import { version } from "react";
 const SCREEN = Dimensions.get("window").width;
 
+const Home = ({ navigation }) => {
+
+  const listsize=users.length;
+  // const listsize=0;
 
 
-
-const Home = () => {
- 
-  
-  const ItemBox = ({ data,handleDelete }) => {
-      const rightSwipe = () => {
-        
-        return (
-          <TouchableOpacity onPress={handleDelete} activeOpacity={0.6}>
-            <View
-              style={{
-                backgroundColor: COLORS.danger,
-                justifyContent: "center",
-                alignItems: "center",
-                width: 100,
-                height:"100%",
-              }}
-            >
-              <Animated.Text style={{ ...FONTS.h4}}>
-                Delete
-              </Animated.Text>
-            </View>
-          </TouchableOpacity>
-        );
-      };
+  const ItemBox = ({ data, handleDelete }) => {
+    const rightSwipe = () => {
+      return (
+        <TouchableOpacity onPress={handleDelete} activeOpacity={0.6}>
+          <View
+            style={{
+              backgroundColor: COLORS.danger,
+              justifyContent: "center",
+              alignItems: "center",
+              width: 100,
+              height: "100%",
+            }}
+          >
+            <Animated.Text style={{ ...FONTS.h4 }}>Delete</Animated.Text>
+          </View>
+        </TouchableOpacity>
+      );
+    };
     return (
       <Swipeable renderRightActions={rightSwipe}>
-        <View
-          style={{
-            height: 80,
-            width: SCREEN,
-            backgroundColor: COLORS.white,
-            justifyContent: "center",
-            padding: 16,
-          }}
+        <TouchableOpacity
+          onPress={() => navigation.navigate("User", { data })}
+          some={1}
         >
-          <Text style={{ ...FONTS.body2 }}>
-            {data.id + "." + data.name + " " + data.surname}
-          </Text>
-        </View>
+          <View
+            style={{
+              height: 80,
+              width: SCREEN,
+              backgroundColor: COLORS.white,
+              justifyContent: "center",
+              padding: 16,
+            }}
+          >
+            <Text style={{ ...FONTS.body2 }}>
+              {data.id + "." + data.name + " " + data.surname}
+            </Text>
+          </View>
+        </TouchableOpacity>
       </Swipeable>
     );
   };
 
-  const deleteItem=(index)=>{
-      const arr=[...users];
-      arr.splice(index,1);
-      console.log('arr->',arr)
-  }
+  const deleteItem = (index) => {
+    const arr = [...users];
+    arr.splice(index, 1);
+    console.log("arr->", arr);
+  };
 
-  return (
-    <SafeAreaView style={{ flex: 1 }}>
+  const FullList = () => {
+    return (
       <FlatList
         data={users}
-        renderItem={({ item,index }) => {
-          return <ItemBox data={item} handleDelete={()=>deleteItem(index)}/>;
+        renderItem={({ item, index }) => {
+          return <ItemBox data={item} handleDelete={() => deleteItem(index)} />;
         }}
         ItemSeparatorComponent={() => {
           return (
@@ -87,6 +89,20 @@ const Home = () => {
           );
         }}
       />
+    );
+  };
+
+  const EmptyList = () => {
+    return (
+      <View>
+        <Text>List is Empty</Text>
+      </View>
+    );
+  };
+
+  return (
+    <SafeAreaView style={{ flex: 1 }}>
+      {listsize === 0 ? <EmptyList /> : <FullList />}
     </SafeAreaView>
   );
 };

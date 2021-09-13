@@ -20,7 +20,7 @@ screenOptions={{
   ]
 }}
 */
-const Num=users.length
+
 const TabBarcustomButton = ({ children, onPress, accessibilityState }) => {
   var isSelected = accessibilityState.selected;
   
@@ -73,6 +73,9 @@ const TabBarcustomButton = ({ children, onPress, accessibilityState }) => {
 };
 
 const Tabs = () => {
+  const Num=users.length
+console.log('users--->',users.length)
+
   return (
     <Tab.Navigator
     style={{paddingTop:20}}
@@ -100,6 +103,7 @@ const Tabs = () => {
     >
       <Tab.Screen
         name="Home"
+
         component={Home}
         options={{
           tabBarIcon: ({ focused }) => (
@@ -137,7 +141,12 @@ const Tabs = () => {
       />
       <Tab.Screen
         name="Adduser"
-        component={Adduser}
+        children={()=>{
+          return(
+            <Adduser users={users} />
+          )
+         }}
+        // component={Adduser}
         options={{
           tabBarIcon: ({ focused }) => (
             <Image
