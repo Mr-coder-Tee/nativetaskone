@@ -18,10 +18,15 @@ import { version } from "react";
 const SCREEN = Dimensions.get("window").width;
 
 const Home = ({prop,users}) => {
-  //
+  
   const {navigation}=prop
   const listsize=users.length;
   // const listsize=0;
+
+  useEffect(()=>{
+
+  },[])
+
 
   const ItemBox = ({ data, handleDelete }) => {
     const rightSwipe = () => {
@@ -44,7 +49,7 @@ const Home = ({prop,users}) => {
     return (
       <Swipeable renderRightActions={rightSwipe}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("User", { data })}
+          onPress={() => navigation.navigate("User", { data,users })}
           some={1}
         >
           <View
@@ -98,8 +103,8 @@ const Home = ({prop,users}) => {
 
   const EmptyList = () => {
     return (
-      <View>
-        <Text style={{...FONTS.h3}}>List is Empty</Text>
+      <View style={{padding:20}}>
+        <Text style={{...FONTS.h3}}>List is Empty,tab Add to create a new user</Text>
       </View>
     );
   };

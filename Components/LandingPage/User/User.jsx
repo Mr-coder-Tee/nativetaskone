@@ -15,15 +15,29 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 
 const User = ({ navigation, route }) => {
-  const { data } = route.params;
+  const { data, users } = route.params;
   const [name, setName] = useState(data.name);
   const [surname, setSurname] = useState(data.surname);
   const [age, setAge] = useState(data.age);
   const [location, setLocation] = useState(data.location);
   const [genders, SetGender] = useState(data.gender);
 
-  console.log('route',route)
+  console.log("data", data);
+  console.log("users", users);
 
+  const index = users.findIndex((user) => user.id === data.id);
+
+  const handleUpdate = () => {
+    users[index] = {
+      id: data.id,
+      name: name,
+      surname: surname,
+      age: age,
+      location: location,
+      gender: genders,
+      img: data.img,
+    };
+  };
 
   return (
     <View>
@@ -152,9 +166,9 @@ const User = ({ navigation, route }) => {
           )}
         </View>
         <Button
-          // onPress={handleSubmit}
+          onPress={() => handleUpdate()}
           //   disabled={!isValid}
-          title="Submit"
+          title="Update"
           style={{
             color: "#2196F3",
             // color:COLORS.white,

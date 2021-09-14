@@ -4,6 +4,8 @@ import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { User, Tabs,About } from "./Components/index";
+import {users} from './UsersDetails'
+
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const Stack = createStackNavigator();

@@ -27,7 +27,7 @@ const genderOption = [
 
 const Adduser = (props) => {
 
-  const [genders, SetGender] = useState();
+  const [genders, SetGender] = useState("Male");
   const [name, setName] = useState();
   const [surname, setSurname] = useState();
   const [age, setAge] = useState();
@@ -105,7 +105,7 @@ const Adduser = (props) => {
           data={avs}
           horizontal
           showsHorizontalScrollIndicator={false}
-          keyExtractor={(item) => `${item.if}`}
+          keyExtractor={(item) => `${item.id}`}
           renderItem={renderAvs}
           contentContainerStyle={{ paddingVertical: SIZES.padding * 2 }}
         />

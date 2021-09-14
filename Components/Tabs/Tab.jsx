@@ -24,8 +24,8 @@ screenOptions={{
 
 
 const Tabs = () => {
+  
   const Num=users.length
-
   return (
     
     <Tab.Navigator

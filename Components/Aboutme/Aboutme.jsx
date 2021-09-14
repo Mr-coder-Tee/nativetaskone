@@ -53,8 +53,13 @@ const About = ({ route }) => {
   };
   const Experience = () => {
     return (
-      <View>
-        <Text>experience frame</Text>
+      <View style={{
+        padding: 10,
+        backgroundColor: COLORS.backdrop,
+        borderTopLeftRadius: 40,
+        borderTopRightRadius: 40,
+      }}>
+        <Text>Mlab:Code tribe</Text>
       </View>
     );
   };
@@ -86,7 +91,12 @@ const About = ({ route }) => {
   };
   const Projects = () => {
     return (
-      <View>
+      <View style={{
+        padding: 10,
+        backgroundColor: COLORS.backdrop,
+        borderTopLeftRadius: 40,
+        borderTopRightRadius: 40,
+      }}>
         <View>
           <Text>
             Count down App:
@@ -150,37 +160,61 @@ const About = ({ route }) => {
   };
   const Skills = () => {
     return (
-      <View>
+      <View style={{
+        padding: 10,
+        backgroundColor: COLORS.backdrop,
+        borderTopLeftRadius: 40,
+        borderTopRightRadius: 40,
+      }}>
         <Text style={{ ...FONTS.h2, textAlign: "center", marginBottom: 10 }}>
           Skills
         </Text>
         <Text>Data structures and algorithms</Text>
+        <View style={{height:1,backgroundColor:COLORS.black}}></View>
+
         <Text>
           Object Oriented programming in java,c++,javascript and python
         </Text>
+        <View style={{height:1,backgroundColor:COLORS.black}}></View>
+
         <Text> Software developer</Text>
+        <View style={{height:1,backgroundColor:COLORS.black}}></View>
+
         <Text>
           {" "}
           Programming language: Java Python Html Css Javascript React js C++{" "}
         </Text>
+        <View style={{height:1,backgroundColor:COLORS.black}}></View>
+
         <Text>
           {" "}
           Frontend: ReactJS React Native Typescript CSS-in-JS (Styled
           Components) AngularJS UI/UX Chrome Developer Tools. jQuery GitHub
           Bootstrap Angular.js
         </Text>
+        <View style={{height:1,backgroundColor:COLORS.black}}></View>
+
         <Text>
           {" "}
           Backend: GraphQL REST NodeJS Java Php C# Javascript Databases: MS SQL
           Server MySQL Firestore Firebase realtime database Microsoft SQL Server
         </Text>
+        <View style={{height:1,backgroundColor:COLORS.black}}></View>
+
         <Text> Problem Solving,Decision Making & Team Building</Text>
+        <View style={{height:1,backgroundColor:COLORS.black}}></View>
+
       </View>
     );
   };
   const Interest = () => {
     return (
-      <View>
+      <View style={{
+        padding: 10,
+        backgroundColor: COLORS.backdrop,
+        borderTopLeftRadius: 40,
+        borderTopRightRadius: 40,
+      }}>
         <Text style={{ ...FONTS.h2, textAlign: "center", marginBottom: 10 }}>
           Interests
         </Text>
@@ -193,7 +227,12 @@ const About = ({ route }) => {
   };
   const Others = () => {
     return (
-      <View>
+      <View style={{
+        padding: 10,
+        backgroundColor: COLORS.backdrop,
+        borderTopLeftRadius: 40,
+        borderTopRightRadius: 40,
+      }}>
         <Text style={{ ...FONTS.h2, textAlign: "center", marginBottom: 10 }}>
           Others
         </Text>
@@ -203,7 +242,12 @@ const About = ({ route }) => {
   };
   const Reference = () => {
     return (
-      <View>
+      <View style={{
+        padding: 10,
+        backgroundColor: COLORS.backdrop,
+        borderTopLeftRadius: 40,
+        borderTopRightRadius: 40,
+      }}>
         <Text style={{ ...FONTS.h2, textAlign: "center", marginBottom: 10 }}>
           Reference
         </Text>
