@@ -6,7 +6,7 @@ export const COLORS={
     secondary:"#cdcd02",
     danger:"#dc3545",
     backdrop:"#C6FFDD",
-
+    bluelink:'#0645AD',
     black:"#000000",
     white:"#ffffff",
     purple:"#7a44cf",
@@ -46,16 +46,16 @@ export const SIZES={
 }
 
 export const FONTS={
-   largeTitle: {fontFamily:'Source Code Pro',fontSize:SIZES.largeTitle,lineHeight:40},
-   h1:{fontFamily:'Source Code Pro',fontSize:SIZES.h1,lineHeight:36},
-   h2:{fontFamily:'Source Code Pro',fontSize:SIZES.h2,lineHeight:30},
-   h3:{fontFamily:'Source Code Pro',fontSize:SIZES.h3,lineHeight:22},
-   h4:{fontFamily:'Source Code Pro',fontSize:SIZES.h4,lineHeight:22},
-   body1:{fontFamily:'Source Code Pro',fontSize:SIZES.body1,lineHeight:36},
-   body2:{fontFamily:'Source Code Pro',fontSize:SIZES.body2,lineHeight:30},
-   body3:{fontFamily:'Source Code Pro',fontSize:SIZES.body3,lineHeight:22},
-   body4:{fontFamily:'Source Code Pro',fontSize:SIZES.body4,lineHeight:22},
-   body5:{fontFamily:'Source Code Pro',fontSize:SIZES.body5,lineHeight:22},
+   largeTitle: {fontSize:SIZES.largeTitle,lineHeight:40},
+   h1:{fontSize:SIZES.h1,lineHeight:36},
+   h2:{fontSize:SIZES.h2,lineHeight:30},
+   h3:{fontSize:SIZES.h3,lineHeight:22},
+   h4:{fontSize:SIZES.h4,lineHeight:22},
+   body1:{fontSize:SIZES.body1,lineHeight:36},
+   body2:{fontSize:SIZES.body2,lineHeight:30},
+   body3:{fontSize:SIZES.body3,lineHeight:22},
+   body4:{fontSize:SIZES.body4,lineHeight:22},
+   body5:{fontSize:SIZES.body5,lineHeight:22},
 }
 
 const appTheme={COLORS,SIZES,FONTS}

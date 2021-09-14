@@ -2,6 +2,8 @@
   "expo": {
     "name": "nativetaskone",
     "slug": "nativetaskone",
+    "privacy":"public",
+    "description":"react native task one",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

@@ -12,6 +12,7 @@
     "@react-navigation/bottom-tabs": "^6.0.5",
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/stack": "^6.0.7",
+    "avataaars": "^2.0.0",
     "expo": "^42.0.3",
     "expo-status-bar": "~1.0.4",
     "formik": "^2.2.9",

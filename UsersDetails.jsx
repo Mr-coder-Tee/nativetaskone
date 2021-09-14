@@ -1,3 +1,4 @@
+import { icons } from "./constants";
 export const users = [
   {
     id: 1,
@@ -6,6 +7,7 @@ export const users = [
     age: 20,
     location: "Makgofe",
     gender: "Male",
+    img:icons.avatar1
   },
   {
     id: 2,
@@ -14,6 +16,8 @@ export const users = [
     age: 15,
     location: "Tsate",
     gender: "Female",
+    img:icons.avatar3
+
   },
   {
     id: 3,
@@ -22,6 +26,8 @@ export const users = [
     age: 17,
     location: "Giyane",
     gender: "Male",
+    img:icons.avatar5
+
   },
   {
     id: 4,
@@ -30,6 +36,8 @@ export const users = [
     age: 17,
     location: "Makgofe",
     gender: "Male",
+    img:icons.avatar6
+
   },
   {
     id: 5,
@@ -38,6 +46,8 @@ export const users = [
     age: 10,
     location: "Never Land",
     gender: "Male",
+    img:icons.avatar4
+
   },
   {
     id: 6,
@@ -46,6 +56,8 @@ export const users = [
     age: 16,
     location: "Janefase",
     gender: "Female",
+    img:icons.avatar2
+
   },
   {
     id: 7,
@@ -54,5 +66,7 @@ export const users = [
     age: 16,
     location: "Janefase",
     gender: "Female",
+    img:icons.avatar3
+
   },
 ];

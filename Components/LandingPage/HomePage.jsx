@@ -9,18 +9,19 @@ import {
   FlatList,
   Dimensions,
   Animated,
+  
 } from "react-native";
+import {Avatar,} from 'react-native-elements'
 import { COLORS, icons, FONTS, SIZES, Item } from "../../constants";
-import { users } from "../../UsersDetails";
 import Swipeable from "react-native-gesture-handler/Swipeable";
 import { version } from "react";
 const SCREEN = Dimensions.get("window").width;
 
-const Home = ({ navigation }) => {
-
+const Home = ({prop,users}) => {
+  //
+  const {navigation}=prop
   const listsize=users.length;
   // const listsize=0;
-
 
   const ItemBox = ({ data, handleDelete }) => {
     const rightSwipe = () => {
@@ -55,9 +56,13 @@ const Home = ({ navigation }) => {
               padding: 16,
             }}
           >
+            <View style={{flexDirection:'row'}}>
+            <Avatar rounded size={'small'} source={data.img}/>
             <Text style={{ ...FONTS.body2 }}>
-              {data.id + "." + data.name + " " + data.surname}
+
+              { data.name + " " + data.surname}
             </Text>
+              </View>
           </View>
         </TouchableOpacity>
       </Swipeable>
@@ -65,14 +70,13 @@ const Home = ({ navigation }) => {
   };
 
   const deleteItem = (index) => {
-    const arr = [...users];
-    arr.splice(index, 1);
-    console.log("arr->", arr);
+    users.splice(index, 1);
   };
 
   const FullList = () => {
     return (
       <FlatList
+      keyExtractor={(item) => `${item.id}`}
         data={users}
         renderItem={({ item, index }) => {
           return <ItemBox data={item} handleDelete={() => deleteItem(index)} />;
@@ -95,13 +99,14 @@ const Home = ({ navigation }) => {
   const EmptyList = () => {
     return (
       <View>
-        <Text>List is Empty</Text>
+        <Text style={{...FONTS.h3}}>List is Empty</Text>
       </View>
     );
   };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1,backgroundColor:COLORS.white }}>
+      <Text style={{...FONTS.h1,padding:10,textAlign:'center'}}>Users</Text>
       {listsize === 0 ? <EmptyList /> : <FullList />}
     </SafeAreaView>
   );

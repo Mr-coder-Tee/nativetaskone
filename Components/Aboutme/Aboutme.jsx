@@ -8,20 +8,24 @@ import {
   FlatList,
   TouchableOpacity,
   Image,
+  Linking,
 } from "react-native";
 import { COLORS, icons, FONTS, SIZES } from "../../constants";
 import { Header, Avatar } from "react-native-elements";
 
 const About = ({ route }) => {
-  console.log("Users", route);
-
+  const loadInBrowser = (link) => {
+    Linking.openURL(link).catch((err) =>
+      console.error("Couldn't load page", err)
+    );
+  };
   const Aboutme = () => {
     return (
       <View style={styles.contentContainer}>
-          <Text style={{...FONTS.h2,textAlign:'center' ,marginBottom:10}}>
-              About Me
-              </Text>
-        <Text style={{...FONTS.body4}}>
+        <Text style={{ ...FONTS.h2, textAlign: "center", marginBottom: 10 }}>
+          About Me
+        </Text>
+        <Text style={{ ...FONTS.body4 }}>
           I am a computer science graduate of the University of Limpopo,but far
           more important to me a a coder. I solve problem and innovate solutions
           using computatonal skills.The act of programming itsef can be very
@@ -56,65 +60,155 @@ const About = ({ route }) => {
   };
   const Education = () => {
     return (
-      <View style={{padding:10,
-        backgroundColor:COLORS.backdrop,
-        borderTopLeftRadius:40,
-        borderTopRightRadius:40,
-       
-        }}>
+      <View
+        style={{
+          padding: 10,
+          backgroundColor: COLORS.backdrop,
+          borderTopLeftRadius: 40,
+          borderTopRightRadius: 40,
+        }}
+      >
+        <Text style={{ ...FONTS.h2, textAlign: "center", marginBottom: 10 }}>
+          EDUCATION
+        </Text>
+        <Text style={{ ...FONTS.h4 }}>Secondary Education:</Text>
+        <Text style={{ ...FONTS.body4 }}>Makgofe high school</Text>
+        <Text style={{ ...FONTS.body4 }}>Matric: 2014</Text>
+        <Text style={{ ...FONTS.h4 }}>Tartiary Education:</Text>
 
-        <Text style={{...FONTS.h2,textAlign:'center' ,marginBottom:10}}>EDUCATION</Text>
-        <Text style={{...FONTS.body4}}>University of limpopo 2020</Text>
-        <Text style={{...FONTS.body4}}>Bsc Mathematical and computer science Degree</Text>
+        <Text style={{ ...FONTS.body4 }}>University of limpopo</Text>
+        <Text style={{ ...FONTS.body4 }}>Year: 2020</Text>
+        <Text style={{ ...FONTS.body4 }}>
+          Bsc Mathematical and computer science Degree
+        </Text>
       </View>
     );
   };
   const Projects = () => {
     return (
       <View>
-        <Text>project frame</Text>
+        <View>
+          <Text>
+            Count down App:
+            <TouchableOpacity
+              onPress={() =>
+                loadInBrowser("https://thirsty-lamport-853d94.netlify.app/")
+              }
+            >
+              <Text style={{ color: COLORS.bluelink }}>
+                {" "}
+                https://thirsty-lamport-853d94.netlify.app/
+              </Text>
+            </TouchableOpacity>
+          </Text>
+        </View>
+        <View>
+          <Text>
+            registration site:
+            <TouchableOpacity
+              onPress={() =>
+                loadInBrowser("https://hardcore-agnesi-65e72d.netlify.app/")
+              }
+            >
+              <Text style={{ color: COLORS.bluelink }}>
+                {" "}
+                https://hardcore-agnesi-65e72d.netlify.app/
+              </Text>
+            </TouchableOpacity>
+          </Text>
+        </View>
+        <View>
+          <Text>
+            Portfolio site:
+            <TouchableOpacity
+              onPress={() =>
+                loadInBrowser("https://terrencetebatso-manaka.netlify.app")
+              }
+            >
+              <Text style={{ color: COLORS.bluelink }}>
+                {" "}
+                https://terrencetebatso-manaka.netlify.app
+              </Text>
+            </TouchableOpacity>
+          </Text>
+        </View>
+        <View>
+          <Text>
+            Tshirt online shopping site:
+            <TouchableOpacity
+              onPress={() => loadInBrowser("https://codingtees.netlify.app/")}
+            >
+              <Text style={{ color: COLORS.bluelink }}>
+                {" "}
+                https://codingtees.netlify.app/
+              </Text>
+            </TouchableOpacity>
+          </Text>
+        </View>
       </View>
     );
   };
   const Skills = () => {
     return (
       <View>
-        <Text>Skills frame</Text>
-      </View>
-    );
-  };
-  const Award = () => {
-    return (
-      <View>
-        <Text>Award frame</Text>
-      </View>
-    );
-  };
-  const Language = () => {
-    return (
-      <View>
-        <Text>Language frame</Text>
+        <Text style={{ ...FONTS.h2, textAlign: "center", marginBottom: 10 }}>
+          Skills
+        </Text>
+        <Text>Data structures and algorithms</Text>
+        <Text>
+          Object Oriented programming in java,c++,javascript and python
+        </Text>
+        <Text> Software developer</Text>
+        <Text>
+          {" "}
+          Programming language: Java Python Html Css Javascript React js C++{" "}
+        </Text>
+        <Text>
+          {" "}
+          Frontend: ReactJS React Native Typescript CSS-in-JS (Styled
+          Components) AngularJS UI/UX Chrome Developer Tools. jQuery GitHub
+          Bootstrap Angular.js
+        </Text>
+        <Text>
+          {" "}
+          Backend: GraphQL REST NodeJS Java Php C# Javascript Databases: MS SQL
+          Server MySQL Firestore Firebase realtime database Microsoft SQL Server
+        </Text>
+        <Text> Problem Solving,Decision Making & Team Building</Text>
       </View>
     );
   };
   const Interest = () => {
     return (
       <View>
-        <Text>Interest frame</Text>
+        <Text style={{ ...FONTS.h2, textAlign: "center", marginBottom: 10 }}>
+          Interests
+        </Text>
+        <Text>Computer Programming</Text>
+        <Text>Drawing</Text>
+        <Text>Sports</Text>
+        <Text>Video Games</Text>
       </View>
     );
   };
   const Others = () => {
     return (
       <View>
-        <Text>other frame</Text>
+        <Text style={{ ...FONTS.h2, textAlign: "center", marginBottom: 10 }}>
+          Others
+        </Text>
+        <Text>Drivers License code 10</Text>
       </View>
     );
   };
   const Reference = () => {
     return (
       <View>
-        <Text>Reference frame</Text>
+        <Text style={{ ...FONTS.h2, textAlign: "center", marginBottom: 10 }}>
+          Reference
+        </Text>
+        <Text>Tyson Moyahabo</Text>
+        <Text>Contacts: tyson@mlab.co.za OR 0786498402</Text>
       </View>
     );
   };
@@ -145,29 +239,18 @@ const About = ({ route }) => {
       framname: "Skills",
       frame: [<Skills />],
     },
-
     {
       id: 5,
-      framname: "Award",
-      frame: [<Award />],
-    },
-    {
-      id: 6,
-      framname: "Language",
-      frame: [<Language />],
-    },
-    {
-      id: 7,
       framname: "Interest",
       frame: [<Interest />],
     },
     {
-      id: 8,
+      id: 6,
       framname: "Others",
       frame: [<Others />],
     },
     {
-      id: 9,
+      id: 7,
       framname: "Reference",
       frame: [<Reference />],
     },
@@ -175,12 +258,11 @@ const About = ({ route }) => {
   const OnSelection = (selected) => {
     SetRendered(true);
     setI(selected.id);
-    console.log("s--->", selected.id);
   };
   const EmptyView = () => {
     return (
       <View>
-        <Text>Hello,Select a section to find out about me</Text>
+        <Text>Hello,Select a section to find out more about me</Text>
       </View>
     );
   };
@@ -190,6 +272,7 @@ const About = ({ route }) => {
   const renderItem = ({ item }) => {
     return (
       <TouchableOpacity
+      key={item.id}
         style={{
           width: 100,
           height: 20,
@@ -216,25 +299,23 @@ const About = ({ route }) => {
     );
   };
 
-  console.log("content", content[0].frame[0]);
   return (
     <SafeAreaView>
-
       <ScrollView>
-      <View style={styles.container}>
-        <Avatar rounded source={icons.me} size="large" />
-        <View style={styles.headercontainer}>
-          <Text style={{ ...FONTS.h3 }}>Terrece Manaka</Text>
-          <Text style={{ ...FONTS.body4 }}>Software Developer</Text>
+        <View style={styles.container}>
+          <Avatar rounded source={icons.me} size="large" />
+          <View style={styles.headercontainer}>
+            <Text style={{ ...FONTS.h3 }}>Terrece Manaka</Text>
+            <Text style={{ ...FONTS.body4 }}>Software Developer</Text>
+          </View>
         </View>
-      </View>
-      <FlatList
-        data={content}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        keyExtractor={(item) => `${item.if}`}
-        renderItem={renderItem}
-        contentContainerStyle={{ paddingVertical: SIZES.padding * 2 }}
+        <FlatList
+          data={content}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          keyExtractor={(item) => `${item.id}`}
+          renderItem={renderItem}
+          contentContainerStyle={{ paddingVertical: SIZES.padding * 2 }}
         />
         {!isRendered ? <EmptyView /> : content[i].frame[0]}
       </ScrollView>
@@ -251,16 +332,16 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     padding: 30,
     marginBottom: 5,
-    color:COLORS.white,
+    color: COLORS.white,
   },
   headercontainer: {
     marginLeft: 20,
   },
-  contentContainer:{
-      padding:10,
-      backgroundColor:COLORS.backdrop,
-      borderTopLeftRadius:40,
-      borderTopRightRadius:40,
+  contentContainer: {
+    padding: 10,
+    backgroundColor: COLORS.backdrop,
+    borderTopLeftRadius: 40,
+    borderTopRightRadius: 40,
   },
 });
 

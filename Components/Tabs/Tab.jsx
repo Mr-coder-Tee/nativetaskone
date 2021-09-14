@@ -21,60 +21,10 @@ screenOptions={{
 }}
 */
 
-const TabBarcustomButton = ({ children, onPress, accessibilityState }) => {
-  var isSelected = accessibilityState.selected;
-  
 
-  if (isSelected) {
-    return (
-      <View style={{ flex: 1, alignItems: "center" }}>
-        <View style={{ flexDirection: "row", position: "absolute", top: 0 }}>
-          <View style={{ flex: 1, backgroundColor: COLORS.white }}></View>
-          <Svg width={75} height={61} viewBox="0 0 75 61">
-            <Path
-              d="M-17.5 378.5C31.5 32.5 302.5 463 375 89C447.5 -285 375 644 375 644H0C0 644 -66.5 724.5 -17.5 378.5Z"
-              fill={COLORS.white}
-            />
-          </Svg>
-          <View style={{ flex: 1, backgroundColor: COLORS.white }}></View>
-        </View>
-        <TouchableOpacity
-          style={{
-            top: -22.5,
-            justifyContent: "center",
-            alignItems: "center",
-            width: 50,
-            height: 50,
-            borderRadius: 25,
-            backgroundColor: COLORS.white,
-          }}
-          activeOpacity={1}
-          onPress={onPress}
-        >
-          {console.log("children->", children)}
-        </TouchableOpacity>
-      </View>
-    );
-  } else {
-    return (
-      <TouchableOpacity
-        style={{
-          flex: 1,
-          height: 60,
-          backgroundColor: COLORS.white,
-        }}
-        activeOpacity={1}
-        onPress={onPress}
-      >
-        {children}
-      </TouchableOpacity>
-    );
-  }
-};
 
 const Tabs = () => {
   const Num=users.length
-console.log('users--->',users.length)
 
   return (
     
@@ -106,7 +56,11 @@ console.log('users--->',users.length)
       <Tab.Screen
         name="Home"
 
-        component={Home}
+        children={(props)=>{
+          return(
+            <Home users={users} prop={props}/>
+          )
+         }}
         options={{
           tabBarIcon: ({ focused }) => (
             <Image
