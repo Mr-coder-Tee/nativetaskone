@@ -53,12 +53,7 @@ const About = ({ route }) => {
   };
   const Experience = () => {
     return (
-      <View style={{
-        padding: 10,
-        backgroundColor: COLORS.backdrop,
-        borderTopLeftRadius: 40,
-        borderTopRightRadius: 40,
-      }}>
+      <View style={styles.contentContainer}>
         <Text>Mlab:Code tribe</Text>
       </View>
     );
@@ -66,12 +61,7 @@ const About = ({ route }) => {
   const Education = () => {
     return (
       <View
-        style={{
-          padding: 10,
-          backgroundColor: COLORS.backdrop,
-          borderTopLeftRadius: 40,
-          borderTopRightRadius: 40,
-        }}
+      style={styles.contentContainer}
       >
         <Text style={{ ...FONTS.h2, textAlign: "center", marginBottom: 10 }}>
           EDUCATION
@@ -91,12 +81,7 @@ const About = ({ route }) => {
   };
   const Projects = () => {
     return (
-      <View style={{
-        padding: 10,
-        backgroundColor: COLORS.backdrop,
-        borderTopLeftRadius: 40,
-        borderTopRightRadius: 40,
-      }}>
+      <View style={styles.contentContainer}>
         <View>
           <Text>
             Count down App:
@@ -160,12 +145,7 @@ const About = ({ route }) => {
   };
   const Skills = () => {
     return (
-      <View style={{
-        padding: 10,
-        backgroundColor: COLORS.backdrop,
-        borderTopLeftRadius: 40,
-        borderTopRightRadius: 40,
-      }}>
+      <View style={styles.contentContainer}>
         <Text style={{ ...FONTS.h2, textAlign: "center", marginBottom: 10 }}>
           Skills
         </Text>
@@ -209,12 +189,7 @@ const About = ({ route }) => {
   };
   const Interest = () => {
     return (
-      <View style={{
-        padding: 10,
-        backgroundColor: COLORS.backdrop,
-        borderTopLeftRadius: 40,
-        borderTopRightRadius: 40,
-      }}>
+      <View style={styles.contentContainer}>
         <Text style={{ ...FONTS.h2, textAlign: "center", marginBottom: 10 }}>
           Interests
         </Text>
@@ -227,12 +202,7 @@ const About = ({ route }) => {
   };
   const Others = () => {
     return (
-      <View style={{
-        padding: 10,
-        backgroundColor: COLORS.backdrop,
-        borderTopLeftRadius: 40,
-        borderTopRightRadius: 40,
-      }}>
+      <View style={styles.contentContainer}>
         <Text style={{ ...FONTS.h2, textAlign: "center", marginBottom: 10 }}>
           Others
         </Text>
@@ -242,12 +212,7 @@ const About = ({ route }) => {
   };
   const Reference = () => {
     return (
-      <View style={{
-        padding: 10,
-        backgroundColor: COLORS.backdrop,
-        borderTopLeftRadius: 40,
-        borderTopRightRadius: 40,
-      }}>
+      <View style={styles.contentContainer}>
         <Text style={{ ...FONTS.h2, textAlign: "center", marginBottom: 10 }}>
           Reference
         </Text>

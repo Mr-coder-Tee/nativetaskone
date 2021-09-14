@@ -27,7 +27,7 @@ const genderOption = [
 
 const Adduser = (props) => {
 
-  const [genders, SetGender] = useState("Male");
+  const [genders, SetGender] = useState();
   const [name, setName] = useState();
   const [surname, setSurname] = useState();
   const [age, setAge] = useState();
@@ -227,6 +227,17 @@ const Adduser = (props) => {
               hasPadding
               onPress={(value) => getGender(value)}
             />
+             {!genders && (
+            <Text
+              style={{
+                paddingLeft: 10,
+                color: COLORS.danger,
+                ...FONTS.body4,
+              }}
+            >
+              Select valid gender
+            </Text>
+          )}
             <Button
                 onPress={handleSubmit}
               disabled={!isValid}
