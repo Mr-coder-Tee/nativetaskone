@@ -12,6 +12,9 @@ export const COLORS={
     purple:"#7a44cf",
     
 
+    appPrimary:'#12c2e9',
+    appSecondary:'#c471ed',
+    appAlt:'#f64f59',
 
     ligthGray:"#f5f5f6",
     ligthGray2:"#f6f6f7",

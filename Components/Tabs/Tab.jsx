@@ -29,9 +29,12 @@ const Tabs = () => {
   return (
     
     <Tab.Navigator
-    style={{paddingTop:20}}
-    
+    style={{paddingTop:20,backgroundColor: COLORS.primary,borderTopWidth: 0,}}
     screenOptions={{
+      tabBarStyle:{
+       backgroundColor:'#0000'
+
+      },
       'scrollEnabled': true,
       "tabBarShowLabel": false,
       "tabBarStyle": [
