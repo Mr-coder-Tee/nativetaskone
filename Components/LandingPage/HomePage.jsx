@@ -41,6 +41,10 @@ const Home = ({ prop, users }) => {
         </TouchableOpacity>
       );
     };
+
+
+
+    
     return (
       <Swipeable renderRightActions={rightSwipe}>
         <TouchableOpacity
